@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Impacts of the Rule Curve Change in 2000}{11}{0}{1}
+\beamer@sectionintoc {2}{Bottleneck at Rainy River}{23}{0}{2}
+\beamer@sectionintoc {3}{Improving Control of Lake Levels}{28}{0}{3}
+\beamer@sectionintoc {4}{Implications for the Rule Curve Review}{37}{0}{4}

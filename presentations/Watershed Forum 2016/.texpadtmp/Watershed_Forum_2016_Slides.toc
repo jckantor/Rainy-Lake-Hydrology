@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {english}
+\beamer@sectionintoc {2}{Why is Control so Difficult?}{3}{0}{1}
+\beamer@sectionintoc {3}{Implementing Rule Curves with Model Predictive Control}{15}{0}{2}
+\beamer@sectionintoc {4}{Assessment and Implications for Rule Curve Review}{19}{0}{3}

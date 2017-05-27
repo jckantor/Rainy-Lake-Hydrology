@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Implementing Rule Curves with Model Predictive Control}{33}{0}{1}
+\beamer@sectionintoc {2}{Assessment and Implications for Rule Curve Review}{37}{0}{2}

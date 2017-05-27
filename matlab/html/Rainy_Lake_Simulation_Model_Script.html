@@ -1,0 +1,202 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Rainy Lake Simulation Model</title><meta name="generator" content="MATLAB 8.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2015-03-12"><meta name="DC.source" content="Rainy_Lake_Simulation_Model_Script.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Rainy Lake Simulation Model</h1><!--introduction--><p>Use this script to load the simulation data for the Simulink model Rainy_Lake_Simulation_Model.slx and display the results. The script loads historical inflow, outflow, and height data from RLEstimates.csv located in an accompanying data directory.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Load Data</a></li><li><a href="#2">Run Simulation</a></li><li><a href="#3">Plot Results</a></li></ul></div><h2>Load Data<a name="1"></a></h2><pre class="codeinput"><span class="keyword">if</span> exist(<span class="string">'RLEstimates.mat'</span>)
+    load <span class="string">'RLEstimates.mat'</span>;
+<span class="keyword">else</span>
+    RLTable = readtable(<span class="string">'./data/RLEstimates.csv'</span>);
+    save <span class="string">'./data/RLEstimates.mat'</span> <span class="string">RLTable</span>
+<span class="keyword">end</span>
+
+dates = datenum(RLTable{:,1});
+H = RLTable{:,2};
+I = RLTable{:,3};
+O = RLTable{:,4};
+
+I = [(1:length(I))',I];
+H = [(1:length(H))',H];
+O = [(1:length(O))',O];
+</pre><h2>Run Simulation<a name="2"></a></h2><pre class="codeinput">Rainy_Lake_Simulation_Model;
+set_param(<span class="string">'Rainy_Lake_Simulation_Model'</span>,<span class="string">'IgnoredZcDiagnostic'</span>,<span class="string">'none'</span>);
+sim(<span class="string">'Rainy_Lake_Simulation_Model'</span>);
+</pre><img vspace="5" hspace="5" src="Rainy_Lake_Simulation_Model_Script_01.png" alt=""> <h2>Plot Results<a name="3"></a></h2><pre class="codeinput">t = levels.Time + datenum(<span class="string">'Jan-01-1970'</span>);
+ago = levels.Data(:,1);
+ehl = levels.Data(:,2);
+urc = levels.Data(:,3);
+lrc = levels.Data(:,4);
+edl = levels.Data(:,5);
+rlest = levels.Data(:,6);
+rlhist = levels.Data(:,7);
+
+figure(1)
+subplot(2,1,1);
+plot(t,urc,<span class="string">'g'</span>, <span class="keyword">...</span>
+    t,lrc,<span class="string">'g'</span>, <span class="keyword">...</span>
+    t,ago,<span class="string">'g'</span>, <span class="keyword">...</span>
+    t,ehl,<span class="string">'g'</span>, <span class="keyword">...</span>
+    t,edl,<span class="string">'g'</span>);
+hold <span class="string">on</span>;
+plot(t,rlest,<span class="string">'r'</span>);
+hold <span class="string">off</span>;
+
+datetick(<span class="string">'x'</span>,12)
+ylim([336.4,338.7])
+title(<span class="string">'Rainy Lake Stage - PID control'</span>);
+
+subplot(2,1,2);
+plot(t,urc,<span class="string">'g'</span>,t,lrc,<span class="string">'g'</span>,t,ago,<span class="string">'g'</span>,t,edl,<span class="string">'g'</span>);
+hold <span class="string">on</span>;
+plot(t,rlhist',<span class="string">'b'</span>);
+hold <span class="string">off</span>;
+
+datetick(<span class="string">'x'</span>,12)
+ylim([336.4,338.7])
+title(<span class="string">'Rainy Lake Stage - Historical'</span>);
+
+print <span class="string">-dpng</span> <span class="string">-r300</span> <span class="string">images/Rainy_Lake_Simulation_Results</span>
+</pre><img vspace="5" hspace="5" src="Rainy_Lake_Simulation_Model_Script_02.png" alt=""> <p>figure(2) scatter(rlest,rlhist) hold on plot([336.4 338.8],[336.4 338.8]) hold off</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2014b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Rainy Lake Simulation Model
+% Use this script to load the simulation data for the Simulink model
+% Rainy_Lake_Simulation_Model.slx and display the results. The script loads
+% historical inflow, outflow, and height data from RLEstimates.csv located
+% in an accompanying data directory.
+
+%% Load Data
+
+if exist('RLEstimates.mat')
+    load 'RLEstimates.mat';
+else
+    RLTable = readtable('./data/RLEstimates.csv');
+    save './data/RLEstimates.mat' RLTable
+end
+
+dates = datenum(RLTable{:,1});
+H = RLTable{:,2};
+I = RLTable{:,3};
+O = RLTable{:,4};
+
+I = [(1:length(I))',I];
+H = [(1:length(H))',H];
+O = [(1:length(O))',O];
+
+%% Run Simulation
+
+Rainy_Lake_Simulation_Model;
+set_param('Rainy_Lake_Simulation_Model','IgnoredZcDiagnostic','none');
+sim('Rainy_Lake_Simulation_Model');
+
+%% Plot Results
+
+t = levels.Time + datenum('Jan-01-1970');
+ago = levels.Data(:,1);
+ehl = levels.Data(:,2);
+urc = levels.Data(:,3);
+lrc = levels.Data(:,4);
+edl = levels.Data(:,5);
+rlest = levels.Data(:,6);
+rlhist = levels.Data(:,7);
+
+figure(1)
+subplot(2,1,1);
+plot(t,urc,'g', ...
+    t,lrc,'g', ...
+    t,ago,'g', ...
+    t,ehl,'g', ...
+    t,edl,'g');
+hold on;
+plot(t,rlest,'r');
+hold off;
+
+datetick('x',12)
+ylim([336.4,338.7])
+title('Rainy Lake Stage - PID control');
+
+subplot(2,1,2);
+plot(t,urc,'g',t,lrc,'g',t,ago,'g',t,edl,'g');
+hold on;
+plot(t,rlhist','b');
+hold off;
+
+datetick('x',12)
+ylim([336.4,338.7])
+title('Rainy Lake Stage - Historical');
+
+print -dpng -r300 images/Rainy_Lake_Simulation_Results
+
+%%
+% figure(2)
+% scatter(rlest,rlhist)
+% hold on
+% plot([336.4 338.8],[336.4 338.8])
+% hold off
+
+
+
+##### SOURCE END #####
+--></body></html>

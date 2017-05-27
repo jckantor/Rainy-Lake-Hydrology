@@ -1,0 +1,11 @@
+# hidden files
+.DS_Store
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+data/HYDAT/Hydat.mdb
+data/HYDAT/DLY_FLOWS.csv
+data/HYDAT/DLY_LEVELS.csv
+data/HYDAT/STATIONS.csv
+
+references/

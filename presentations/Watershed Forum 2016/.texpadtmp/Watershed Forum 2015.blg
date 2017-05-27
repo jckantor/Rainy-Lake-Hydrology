@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: /Users/jeff/Box Sync/RLPOA Technical Committee/Presentation for the Rainy Lake Watershed Forum/.texpadtmp/Watershed Forum 2015.aux
+The style file: plain.bst
+Database file #1: ../RainyLakeHydrology.bib
+Warning--empty journal in Delgoda:2013aa
+Warning--there's a number but no series in StGeorge2006
+You've used 31 entries,
+            2118 wiz_defined-function locations,
+            689 strings with 10164 characters,
+and the built_in function-call counts, 8556 in all, are:
+= -- 853
+> -- 408
+< -- 8
++ -- 162
+- -- 130
+* -- 534
+:= -- 1547
+add.period$ -- 94
+call.type$ -- 31
+change.case$ -- 162
+chr.to.int$ -- 0
+cite$ -- 33
+duplicate$ -- 320
+empty$ -- 629
+format.name$ -- 130
+if$ -- 1749
+int.to.chr$ -- 0
+int.to.str$ -- 31
+missing$ -- 16
+newline$ -- 157
+num.names$ -- 65
+pop$ -- 136
+preamble$ -- 1
+purify$ -- 125
+quote$ -- 0
+skip$ -- 218
+stack$ -- 0
+substring$ -- 393
+swap$ -- 42
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 118
+warning$ -- 2
+while$ -- 80
+width$ -- 33
+write$ -- 341
+(There were 2 warnings)

@@ -1,0 +1,6 @@
+\select@language {english}
+\contentsline {section}{Introduction}{1}{section*.1}
+\contentsline {section}{A Lumped Parameter Model for Lake Levels}{1}{section*.2}
+\contentsline {section}{Figures}{1}{section*.3}
+\contentsline {section}{Conclusions}{1}{section*.4}
+\contentsfinish 
