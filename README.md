@@ -12,7 +12,7 @@ The code, data, and descriptive materials are available as public [github reposi
 
 A summary of presentations based on the data and calculations in this repository. 
 
-* [Progress towards new Rule Curves for Rainy Lake](https://docs.google.com/presentation/d/1_shAd_7P-M5O7DZ6QJYOl_FBVGiNjVCfFiD_RGOxQ_8/present?usp=sharing)
+* [Progress towards new Rule Curves for Rainy Lake](https://docs.google.com/presentation/d/1_shAd_7P-M5O7DZ6QJYOl_FBVGiNjVCfFiD_RGOxQ_8/present?usp=sharing) Presented to the Rainy Lake Property Owners Association, June 21, 2017, Thunderbird Lodge, International Falls, Minnesota.
 * [Estimating Inflows and Forecasting Ice-Out for Adaptive Management of the Rainy Lake and Namakan Reservoir](https://docs.google.com/presentation/d/1Sb2jcpGald0PixVG0X6MljYXRJnRvAKkBgfKyz9ogbE/pub?start=false&loop=false&delayms=3000&slide=id.g161129bc08_1_1909). 2016 International Rainy-Lake of the Woods Watershed Forum, March 9, 2017, International Falls, MN.
 * [Multivariable Control of Lake Levels and Stream Flows in the Namakan Reservoir/Rainy Lake Watershed](https://github.com/jckantor/Rainy-Lake-Hydrology/blob/master/presentations/Watershed%20Forum%202016/Watershed_Forum_2016_Slides.pdf). Presented at the 2016 International Rainy-Lake of the Woods Watershed Forum, March 10, 2016, International Falls, MN.
 * [Model predictive control strategies for implementing rule curves for the Namakan Reservoir / Rainy Lake Watershed](https://github.com/jckantor/Rainy-Lake-Hydrology/blob/master/presentations/Watershed%20Forum%202015/Watershed_Forum_2015_Slides.pdf). Presented at the 2015 International Rainy-Lake of the Woods Watershed Forum, March 11-12, 2015, International Falls, MN.
