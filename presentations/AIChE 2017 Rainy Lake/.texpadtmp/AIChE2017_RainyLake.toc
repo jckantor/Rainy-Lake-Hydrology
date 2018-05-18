@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Overview}{3}{0}{1}
+\beamer@sectionintoc {2}{Current Practice}{13}{0}{2}
+\beamer@sectionintoc {3}{Predictive Control 1. Implementing Rule Curves}{19}{0}{3}
+\beamer@sectionintoc {4}{Predictive Contol 2. Adaptive Rule Curves}{33}{0}{4}
+\beamer@sectionintoc {5}{Predictive Contol 3. Ecosystem}{43}{0}{5}
+\beamer@sectionintoc {6}{Discussion}{52}{0}{6}
