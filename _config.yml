@@ -2,7 +2,7 @@ title: Rainy Lake Hydrology
 description: Computational notebooks analyzing the hydrology of the Rainy River watershed on the Minnesota/Ontario border.
 google_analytics: UA-48089809-6
 show_downloads: true
-theme: jekyll-theme-architect
+theme: jekyll-theme-minimal
 
 gems:
   - jekyll-mentions
